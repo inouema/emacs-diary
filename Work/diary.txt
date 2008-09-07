@@ -1,4 +1,5 @@
 2008-09-07  Masato Inoue  <masatoinoue00@gmail.com>
+        * git: test2
 	* git: test
 	* git: checkout test
 	* hatena-mode
