@@ -1,7 +1,5 @@
 2008-09-07  Masato Inoue  <masatoinoue00@gmail.com>
 
-	* git: New repos test
-
 	* hatena-mode
 	hw.el 置いた場所
 	/opt/local/bin
@@ -41,54 +39,37 @@
 	[bookmark][<https://github.com/login>]
 
 	* git: [command] コマンドリスト
-	(Perfoceを普段使用しておりとっつきやすい)
 
-	
-	* git: remote repos を作成する(web)
-	まずはWebから作成 url<>
-Global setup:
+	- remote repos を作成する(web)
+	まずはWebから作成 url<http://github.com/repositories/new>
+	============================
+	Global setup:
 
-  Download and install Git
-  git config --global user.email masatoinoue00@gmail.com
+  	Download and install Git
+  	git config --global user.email masatoinoue00@gmail.com
+
+
+	Next steps:
+
+  	mkdir emacs-diary
+  	cd emacs-diary
+  	git init
+  	touch README
+  	git add README
+  	git commit -m 'first commit'
+  	git remote add origin git@github.com:inouema/emacs-diary.git
+  	git push origin master
       
 
-Next steps:
+	Existing Git Repo?
 
-  mkdir emacs-diary
-  cd emacs-diary
-  git init
-  touch README
-  git add README
-  git commit -m 'first commit'
-  git remote add origin git@github.com:inouema/emacs-diary.git
-  git push origin master
-      
-
-Existing Git Repo?
-
-  cd existing_git_repo
-  git remote add origin git@github.com:inouema/emacs-diary.git
-  git push origin master
-      
-
-Importing a SVN Repo?
-
-  Click here
-      
-
-When you're done:
-
-  Continue
-
-
+  	cd existing_git_repo
+  	git remote add origin git@github.com:inouema/emacs-diary.git
+  	git push origin master
+	=============================
 	
-	$ pwd
-	~/.
-	$ cd src/GitHub/repos
-	$ mkdir new-repo
-	
-	
-	
+	- remote repoを削除する
+	Webから削除したいrepoに行き edit->delete button で削除
 	
 	gitのヘルプコマンドを表示
 	$ man git
@@ -107,11 +88,11 @@ When you're done:
 	github(web)で行われた変更,もしくはgithubの内容をLocalに持ってくる
 	$ git pull github master
 	
-	
 	* git: tips
 	/usr/bin/ssh-add -K[bookmark][<http://github.com/guides/how-to-not-have-to-type-your-password-for-every-push>]
 	ここの設定は必ず必要
-	* git: 使う
+	
+	* git: オンラインマニュアル
 	Gitマニュアル日本語訳[bookmark][<http://www8.atwiki.jp/git_jp/>]
 	初めてのGit[bookmark][<http://www.ideaxidea.com/archives/2008/04/git.html>]
 	参考URL(GitHubの紹介)[bookmark][<http://www.goodpic.com/mt/archives2/2008/08/githubmac.html>]
@@ -144,10 +125,8 @@ When you're done:
 	$ sudo port install cogito
 	---> 失敗
 	恐らく前述の git-core で失敗したから
-
 	$ sudo port clean cogito
 	$ sudo port install cogito
-
 	
 	* debian: URL
 	[bookmark][<http://www.debian.or.jp/>]
