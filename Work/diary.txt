@@ -1,0 +1,503 @@
+2008-09-07  Masato Inoue  <masatoinoue00@gmail.com>
+
+
+	* hatena-mode
+	hw.el 置いた場所
+	/opt/local/bin
+	$ sudo chmod a+x hw.el
+
+	$ hw.el
+	---> Crypt::SSleay が無いと怒られた
+	Mac port にあるのでインストール
+
+	$ sudo port install p5-crypt-ssleay
+	--> まだだめ
+	$ sudo port install ccrypt
+	$ sudo port install p5-crypt-*
+	$ sudo port install p5-lib*
+	[http://209.85.175.104/search?q=cache:-NiBPeYCCbMJ:kamiyn.spaces.live.com/%3F_c11_BlogPart_BlogPart%3Dblogview%26_c%3DBlogPart%26partqs%3Damonth%253D2%2526ayear%253D2008+Crypt::SSLeay+Leopard+Mac&hl=ja&ct=clnk&cd=7&gl=jp&lr=lang_ja&client=firefox-a]
+
+	$ perl -MCPAN -e shell
+	---> 本当はちゃんと質問に答えるべきだった
+
+	$ perl -MCPAN -e sehll
+	cpan> install Crypt::SSLeay
+
+	* emacs: Lisp Tips
+	[bookmark][<http://www.cs.cmu.edu/~maverick/GNUEmacsColorThemeTest/index-el.html>]
+
+	* mac: Mac Portによってインストールできるアプリケーションを知るには
+	$ port search <app name>
+	ex)
+	$ port search lv
+
+	* emacs: 今後このファイルはgithubで管理します!
+
+	* find: [mac][commnad] 現在のディレクトリのみ
+	オプションに -maxdepth 1  を加える
+
+	* git: git login
+	[bookmark][<https://github.com/login>]
+
+	* git: [command] コマンドリスト
+	(Perfoceを普段使用しておりとっつきやすい)
+
+	
+	* git: remote repos を作成する(web)
+	まずはWebから作成 url<>
+Global setup:
+
+  Download and install Git
+  git config --global user.email masatoinoue00@gmail.com
+      
+
+Next steps:
+
+  mkdir emacs-diary
+  cd emacs-diary
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:inouema/emacs-diary.git
+  git push origin master
+      
+
+Existing Git Repo?
+
+  cd existing_git_repo
+  git remote add origin git@github.com:inouema/emacs-diary.git
+  git push origin master
+      
+
+Importing a SVN Repo?
+
+  Click here
+      
+
+When you're done:
+
+  Continue
+
+
+	
+	$ pwd
+	~/.
+	$ cd src/GitHub/repos
+	$ mkdir new-repo
+	
+	
+	
+	
+	gitのヘルプコマンドを表示
+	$ man git
+
+	fileの登録,変更を加えた事を知らせるコマンド
+	$ git add <file name>
+
+	作業内容をcommit
+	$ git commit
+	(要 commitコメント)
+
+	Localで行った作業内容をgithubに適用する
+	$ git push github master
+	(githubの箇所は <git root>/.git/config に記述されている場所)
+
+	github(web)で行われた変更,もしくはgithubの内容をLocalに持ってくる
+	$ git pull github master
+	
+	
+	* git: tips
+	/usr/bin/ssh-add -K[bookmark][<http://github.com/guides/how-to-not-have-to-type-your-password-for-every-push>]
+	ここの設定は必ず必要
+	* git: 使う
+	Gitマニュアル日本語訳[bookmark][<http://www8.atwiki.jp/git_jp/>]
+	初めてのGit[bookmark][<http://www.ideaxidea.com/archives/2008/04/git.html>]
+	参考URL(GitHubの紹介)[bookmark][<http://www.goodpic.com/mt/archives2/2008/08/githubmac.html>]
+	GitHub(無料GitRepo)[bookmark][<http://github.com/>]
+	
+	* git: インストール参考URL 及び 注意点
+	[bookmark][<http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac>]
+	[bookmark][<http://d.hatena.ne.jp/akm/20080503>]
+
+	insntall command は以下
+	$ sudo port install git-core +gitweb +svn
+	--->  失敗
+	多分 bash_completion というのを入れないとエラーがはかれる
+
+	$ sudo port clean git-core +gitweb +svn
+	一度インストール途中でこけたらcleanしておく
+	
+	$ sudo port install git-core +gitweb +svn +bash_completion
+	--->  成功
+-------------------------------------------------------------
+	.bash_profileに以下を追加することを忘れずに
+	(先頭の*はclgrepで続き文だと認識させる為に追加. 実際は不要.)
+*if [ -f /opt/local/etc/bash_completion 
+*	. /opt/local/etc/bash_completion
+*fi
+-------------------------------------------------------------
+	$ git --version 
+	git version 1.5.6.5
+	
+	$ sudo port install cogito
+	---> 失敗
+	恐らく前述の git-core で失敗したから
+
+	$ sudo port clean cogito
+	$ sudo port install cogito
+
+	
+	* debian: URL
+	[bookmark][<http://www.debian.or.jp/>]
+
+	* mew:  Mannual 使い方
+	[bookmark][<http://www.mew.org/release/info/index.html>]
+	
+	mewを起動する
+	muleを起動してM-x mewと入力する。
+	
+	新規にメールを書く
+	w
+
+	メールを受信する
+	s
+	
+	メールを送信する
+	C-c C-c
+	
+	ヘッダをつける
+	C-c C-m
+	
+	シグネイチャをつける
+	C-c TAB
+	~/.signatureにシグネイチャを書いておく必要があります。
+	
+	返事を書く
+	a
+	
+	返事を書く（引用付）
+	A
+	
+	フォルダを移動する
+	g
+	
+	フォルダ内のメッセージをソートする
+	S
+	
+	フォルダ内のメッセージを番号詰めする
+	O
+	
+	メッセージを別のフォルダに移動する
+	o
+	
+	表示されているメッセージすべてに'*'マークをつける
+	(処理の対象マーク)
+	ma
+	
+	'*'マークのついているメッセージに'o'マークをつける
+	(整頓 つまりフォルダを移動させる)
+	mo
+
+	移動マークを付ける
+	o
+
+	マーク付けたメールをマークに応じた処理を行う
+	(慎重に)
+	x
+	
+	ファイルを添付する
+	C-c C-a c
+	
+	ヘッダに'Bcc: 'が最初から表示されるようにする。
+	~/.emacsに以下の行を加える。
+	(setq mew-header-alist
+		'(("Bcc:" . "")))
+
+	mew 一旦停止
+	q
+
+	mew 終了
+	Q
+	
+	* emacs: [mew][stunnel]
+	Carbon Emacs with Mew にて設定すべき事
+	1. stunnelのインストール
+	2. OpenSSLの為の証明書のインストール
+	3. .emacs
+	4. .mew.el
+	5. Gmail側 IMAPを有効にする
+	
+
+	* emacs: TAB表示
+	[bookmark][<http://209.85.175.104/search?q=cache:zk9pwTCl4XAJ:d.hatena.ne.jp/mssh/20080831/1220167812+emacs+TAB+jaspace.el&hl=ja&ct=clnk&cd=11&gl=jp&lr=lang_ja&client=firefox-a>]
+	
+
+2008-09-05  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* mew: stunnel以外
+	[bookmark][<http://www.imlab.sie.dendai.ac.jp/~odate/pukiwiki/index.php?Mew%20on%20Carbon%20Emacs>]
+
+	* stunnel: [mew] URL
+	[bookmark][<http://www.nanashinonozomi.com/tdiary/20060910.html>]
+	証明書について[bookmark][<http://www.nanashinonozomi.com/tdiary/20060915.html#p01>]
+	
+2008-09-03  Masato Inoue  <masatoinoue00@gmail.com>
+	
+	* delete_preference.app
+	 --> VLCをインストールした際に同梱されていた
+
+2008-09-01  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* mac: [stunnel][mew] CAとか証明書の参考サイト
+	[bookmark][<http://www.takuto.biz/private/memo/changelog/2008-02-03.html>]
+        [bookmark][<http://www.takuto.biz/private/weblog/d2/?date=20080205>] : こちらの方が参考になる
+	stunnel.conf
+	/opt/local/etc/stunnel/stunnel.conf
+        
+	[stunnel]CA証明書
+	[bookmark][<http://www.mew.org/pipermail/mew-dist/2006-September/026999.html>]
+
+	[mew] IMAPの設定
+	[bookmark][<http://blueskyproject.net/kde/blog/2008/03/gmailimap-with-mew.html>]
+
+	[stunnle]SSL証明書のテスト方法
+	[bookmark][<http://tty0.exblog.jp/tags/Stunnel/>]
+
+2008-08-31  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* emacs: [mew] 続き
+	stunnel が入ってないから送受信できないような
+
+	* emacs: [mew] 参考.emacs
+	[bookmark][<http://blog.s2factory.co.jp/yoshizu/2008/05/carbon-emacs.html>]
+	[bookmark][<http://www.vinelinux.org/manuals/mua.html>]
+	[bookmark][<http://at-aka.blogspot.com/2005/05/mew-gmail-gmailemacsmewfedoracore2.html>]
+
+2008-08-30  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* emacs: 文字コードの設定方法
+	M-x set-buffer-file-coding-system
+
+	OS種別	        EUC	JIS	Shift JIS
+	UNIX	        euc-japan-unix	junet-unix	sjis-unix
+	MS-DOS	        euc-japan-dos	junet-dos	sjis-dos
+	Macintosh	euc-japan-mac	junet-mac	sjis-mac
+
+	4.emacsでUTF-8ファイルを利用する
+	emacsでUTF-8ファイルを利用するには、mule-ucsが必要です。
+	Debianなら、"apt-get install mule-ucs"で利用できるようになります。
+	なお、UTF-8の改行コードも他の文字コードと同じように指定できます。
+	
+	utf-8-unix	文字コードUTF-8、改行コードUNIX形式
+	utf-8-mac	文字コードUTF-8、改行コードMAC形式
+	utf-8-win	文字コードUTF-8、改行コードWindows形式
+
+	* emacs: 式の評価方法 C-x C-e
+	例えば *scratch* buffer内で
+　　　　　(setq exec-path (append '( "/usr/local/bin" "/usr/X11R6/bin") exec-path))
+	(insert (prin1-to-string (x-list-fonts "*")))
+	とかを記述して、C-x C-e とすると式の結果が表示される.
+	
+	* mac: spaces キーバインド
+	default - Control + 方向キー
+	change  - command + 方向キー
+
+	* イケテル勉強会: [rbc][rails][jruby][mac] WEBrick localhostについて
+	mac bookでは localhost ではなくて 0.0.0.0 でアクセスすること
+	<参照>
+	=> Rails 2.1.0 application started on http://0.0.0.0:3000
+
+	MVC (mode view controller)
+	projectname/app/以下に入っている
+
+	controller: Browserからの要求を受け取り応じた処理をする
+	mode: DB制御をになう
+	view: Browserに表示させる為にHTML言語に変換
+
+	project/public が標準のHP
+
+	* jruby: [compile] jruby -c で文法チェック
+
+2008-08-26  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* emacs: [mac] clmemo,blgrepインストール
+	[bookmark]<http://pop-club.hp.infoseek.co.jp/emacs/changelog.html#install-clmemo>
+	/usr/local/share/emacs/site-lispにはclmemo.elをinstall
+	/usr/local/share/emacs/site-lisp/blgrepには
+	blgrep-0.2/
+	$ make
+	$ sudo make install
+	にて blgrep.elがインストールされる
+	blgrep.elと同じディレクトリにclmemo.elをインストール
+
+	かなり便利です
+	
+
+	* mac:  jman(日本語man) for MacOSX-10.5 インストール
+	[bookmark]<http://www.fan.gr.jp/~sakai/unix.php>
+
+2008-08-24  Masato Inoue  <masatoinoue00@gmail.com>
+
+
+	* emacs: Color theme
+	カラーテーマ参考
+	<http://www.cs.cmu.edu/~maverick/GNUEmacsColorThemeTest/index-el.html>
+
+	* emacs: M-% query-replace
+	使い方を調べる
+
+	* mac: [linux][ruby] ruby file の実行権限
+	userに対して x権限(u+x)が必要らしい
+	
+2008-08-23  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* emacs: Mini buffer 補完を便利に
+	[bookmark] <http://d.hatena.ne.jp/goryugo/20080515/1210780145>
+
+	* mac: Visorインストール (Terminalを便利に使う)
+	[bookmark] <http://code.google.com/p/blacktree-visor/>
+        今のキーバインドは Ctrl+Tab
+	
+2008-08-20  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* mac: [command][shell][bash]今使っているshellを調べる
+	$ printenv SHELL
+	$ echo $SHELL
+
+	* mac: [command] find カレントディレクトリのみ
+	$ find ./ -maxdepth 1 -type f -name "<file_name>"
+	note: -maxdepthがみそ
+	      -type f : File
+	      -type d : directoryxxs
+	
+2008-08-19  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* emacs: Myロードパス ~/site-lisp/
+	
+	/usr/share/emacs/site-lisp
+	ここにemacs-lispを置くことで機能を追加することができる
+	---> ここはrootの所有
+
+	
+2008-08-17  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* MySQL: MySQL Administrator (GUIからデータベースを作成できる)
+	inouema/Application にインストール
+
+	* MySQL: GUIからのStartupMySOL
+	システム環境設定->MySQL から立ち上げ可能
+
+	* JRoR+MySQL_Project:
+	参考URL
+	sun soralis
+	[bookmark] <http://wikis.sun.com/pages/viewpage.action?pageId=31524399>
+
+	Rails Agile Cooking
+	最も参考になったページ
+	Arduinoに関することも記述
+	[bookmark] <http://www.ok.kmd.keio.ac.jp/ruby/?paged=2>
+
+	* Rails: Rails projectの作成
+	rails <project_name> -d mysql
+
+	* MySQL: 存在するDBを確認
+	$ mysqlshow -u root -p
+	* MySQL: Access denied for user 'root'@'localhost' (using password: NO)#
+	原因:MySQLにrootパスワードなしで接続しようとしている
+	解決方法？：config/database.yml の password: の項目にrootパスワードを設定
+	セキュリティ上あまりよろしくない気がするが
+
+2008-08-16  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* Bookmark: シンボリックリンクvs.ハードリンク[mac UNIX commna]
+	[bookmark] <http://x68000.q-e-d.net/~68user/unix/pickup?ln>
+
+	* mac: インフラ整備
+	Terminal.appのANSIカラーをカスタマイズ
+
+	1.以下より.tbzを落としSIMBL.pkgよりインストール
+	http://culater.net/software/SIMBL/SIMBL.php
+	/Library/Application Support/SIMBL/ 以下に構成される
+
+	2.以下から TerminalColoreopard-0.2.1.dmg をダウンロード
+	http://niw.at/articles/2007/11/02/TerminalColoreopard/ja
+	!1.をしなくてもSIMBLは同梱されていた模様
+
+	* mac: よく使うコマンド[FreeBSD command]
+	=== プロセス関係 ===
+	$ top
+	$ ps [auxw] -w:折り返し表示
+	$ ps aux | grep <process_name>
+	$ pstree[nothing]
+
+	=== 検索関係 ===
+	$ find <finder_place> -name <folder_name> <expression>
+	ext) 現在のカレントディレクトリ以下からextフォルダを探す
+	$ find ./ -name ext -print -type d
+
+	=== 便利 ===
+	 フォアグランド起動とバックグランド起動
+	前者はプロセスが終了するまでシェルがコマンドを受け付けない
+	対して後者はプロセス終了を待たずシェルがコマンドを受け付ける
+	ex)
+	$ emacs ---> Emacsを終了するまでコマンドが打てない
+	$ emacs & ---> Emacsを終了しなくてもコマンドが打てる
+
+	* mac: ls memo
+	drwxr-xr-x
+	左から  ディレクトリかどうか　オーナ　グループ　その他
+	
+
+	* MySQL: MySQLがターミナルから起動しなかった場合の対処方法
+	1. /etc/hostconfig を以下の用に修正
+	$ sudo vi hostconfig
+	vi) MYSQLCOM=-NO- ---> -YES- へ変更
+	
+	2. MySQLの起動スクリプトを走らせる
+	sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
+	※他オプションとして stop|restart が存在
+	
+	* MySQL: 接続方法
+	　$ mysql -u root -h localhost -p
+	Enter password:dca23971
+
+2008-08-15  Masato Inoue  <masatoinoue00@gmail.com>
+
+
+	* mac: bashについて
+	~/.bash_profile -> ~/.bashrcを読み込ませる為に必要
+	~/.bashrc
+
+2008-08-09  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* mac: ショートカット
+	葉っぱ　		commad
+	右下におりる線　	option
+	上　　　		Shift
+	上三角　		Control
+	×　    	Del
+	丸矢印　		Esc
+
+
+	* mac: spotlight
+	ショートカット　Control+Shift+Spc
+
+	* mac: ことえり
+	文字変換　
+
+2008-08-08  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* C 書き方について
+	*++argv これの優先度ってどうなんだったっけ
+
+2008-08-06  Masato Inoue  <masatoinoue00@gmail.com>
+
+	* Password
+	Youtube id:un9oiseau pass:dca23971
+
+	* E-mail[Address address email]
+	My: masatoinoue00@gmail.com
+	    masato_ino@yahoo.co.jp
+	    nrd33304@nifty.com
+	おてさん: otomo-3@excite.co.jp
