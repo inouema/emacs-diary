@@ -1,5 +1,5 @@
 2008-09-07  Masato Inoue  <masatoinoue00@gmail.com>
-
+	* git: checkout test
 	* hatena-mode
 	hw.el 置いた場所
 	/opt/local/bin
